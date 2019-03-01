@@ -1,6 +1,6 @@
 DELIMITER $$
-DROP PROCEDURE IF EXISTS insererDansPersonne$$
-CREATE PROCEDURE insererDansPersonne() 
+DROP PROCEDURE IF EXISTS reset_procollab$$
+CREATE PROCEDURE reset_procollab() 
 BEGIN
 	-- desactive les contraintes d'integrite
     SET FOREIGN_KEY_CHECKS=0;
@@ -18,5 +18,5 @@ BEGIN
 	 					
 END$$
 
-CALL insererDansPersonne()$$
+CALL reset_procollab()$$
 
