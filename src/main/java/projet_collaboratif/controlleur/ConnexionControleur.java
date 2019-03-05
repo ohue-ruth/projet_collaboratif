@@ -35,11 +35,12 @@ public class ConnexionControleur {
 	@RequestMapping(method = RequestMethod.POST)
 	public String authentifier(@ModelAttribute("personne") Personne personne, HttpSession session,
 			ModelMap modelMap) {
-		if(personneService.findByEmailAndMotPasse(personne.getEmail(), personne.getMotPasse()) != null) {
+		Personne person = personneService.findByEmailAndMotPasse(personne.getEmail(), personne.getMotPasse());
+		if(person  != null) {
 			//session.setAttribute("nomUtilisateur", personne.getNom());
 			//session.setAttribute("prenomUtilisateur", personne.getPrenom());
-			session.setAttribute("emailUtilisateur", personne.getEmail());
-			return "connexion/index";
+			session.setAttribute("user", person);
+			return "etudiant";
 		}
 		else {
 			modelMap.put("msgConnexion","Compte non valide");
