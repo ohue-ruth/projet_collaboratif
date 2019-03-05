@@ -29,7 +29,7 @@ BEGIN
     
 
     insert into membre_promotion (id_personne, id_promotion)
-    values (1,1); (2,2); (3,3); (4,4); (5,5);
+    values (1,1), (2,2), (3,3), (4,4), (5,5);
 
     insert into projet (id_projet, id_formateur, id_promotion, titre, date_creation, date_fin)
         values   (1, 1, 1, 'Projet_A', '2019/03/01',  '2019/03/12'),

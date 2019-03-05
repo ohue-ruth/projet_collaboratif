@@ -35,7 +35,7 @@ public class ConnexionControleur {
 	@RequestMapping(method = RequestMethod.POST)
 	public String authentifier(@ModelAttribute("personne") Personne personne, HttpSession session,
 			ModelMap modelMap) {
-		if(personneService.findByEmailAndMotPasse(personne.getEmail(), personne.getMotPasse()) == null) {
+		if(personneService.findByEmailAndMotPasse(personne.getEmail(), personne.getMotPasse()) != null) {
 			//session.setAttribute("nomUtilisateur", personne.getNom());
 			//session.setAttribute("prenomUtilisateur", personne.getPrenom());
 			session.setAttribute("emailUtilisateur", personne.getEmail());
