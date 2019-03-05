@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<title>Page de connexion</title>
+</head>
+<body>
+	<form th:action="connexion" th:object="${personne}"
+		method="post">
+		<span th:text="${msgConnexion}"></span>
+		<table cellpadding="2" cellspacing="2">
+			<tr>
+				<td><label>Email :</label></td>
+				<td><input type="text" th:field="*{email}" /></td>
+			</tr>
+			<tr>
+				<td><label>Mot de passe :</label></td>
+				<td><input type="password" th:field="*{motPasse}" /></td>
+			</tr>
+			<tr>
+				<td>&nbsp;</td>
+				<td><input type="submit" value="Valider"></input></td>
+			</tr>
+
+			<!--  <tr>
+<td><label>Email :</label></td>
+<td><input type="text" name="email"></input></td> </tr>
+<tr>
+<td><label>Mot de passe :</label></td> <td><input type="text" name="motpasse"></input></td>
+</tr>
+<tr>
+<td></td>
+<td><input type="submit" value="Validez"></input></td>
+</tr> -->
+
+		</table>
+	</form>
+</body>
+</html>

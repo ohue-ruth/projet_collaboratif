@@ -7,14 +7,17 @@ import java.util.LinkedHashMap;
 import java.util.Map;
 
 import javax.persistence.Column;
+import javax.persistence.EmbeddedId;
 import javax.persistence.Entity;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.MapsId;
 import javax.persistence.Version;
 
 @Entity(name="membre_promotion")
 public class MembrePromotion implements Serializable {
-
+	 @EmbeddedId
+	 private MembrePromotionCle cle;
     /** Primary key. */
     protected static final String PK = "MembrePromotionPrimary";
 
@@ -42,10 +45,11 @@ public class MembrePromotion implements Serializable {
     public void setLockFlag(Integer aLockFlag) {
         lockFlag = aLockFlag;
     }
-
+    @MapsId("idPersonne")
     @ManyToOne(optional=false)
     @JoinColumn(name="id_personne", nullable=false)
     private Personne personne;
+    @MapsId("idPromotion")
     @ManyToOne(optional=false)
     @JoinColumn(name="id_promotion", nullable=false)
     private Promotion promotion;

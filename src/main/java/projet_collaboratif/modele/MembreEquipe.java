@@ -7,16 +7,20 @@ import java.util.LinkedHashMap;
 import java.util.Map;
 
 import javax.persistence.Column;
+import javax.persistence.EmbeddedId;
 import javax.persistence.Entity;
 import javax.persistence.Index;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.MapsId;
 import javax.persistence.Table;
 import javax.persistence.Version;
 
 @Entity
 @Table(name="membre_equipe", indexes={@Index(name="membreEquipeUniqueProjetPersonne", columnList="id_projet,id_personne", unique=true)})
 public class MembreEquipe implements Serializable {
+    @EmbeddedId
+    private MembreEquipeCle cle;
 
     /** Primary key. */
     protected static final String PK = "MembreEquipePrimary";
@@ -46,12 +50,17 @@ public class MembreEquipe implements Serializable {
         lockFlag = aLockFlag;
     }
 
+    @MapsId("idEquipe")
     @ManyToOne(optional=false)
     @JoinColumn(name="id_equipe", nullable=false)
     private Equipe equipe;
+    
+    @MapsId("idPersonne")
     @ManyToOne(optional=false)
     @JoinColumn(name="id_personne", nullable=false)
     private Personne personne;
+    
+    @MapsId("idProjet")
     @ManyToOne(optional=false)
     @JoinColumn(name="id_projet", nullable=false)
     private Projet projet;

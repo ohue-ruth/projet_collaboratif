@@ -147,13 +147,10 @@ CREATE TABLE IF NOT EXISTS `procollab`.`membre_equipe` (
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
-CREATE USER 'procollab_user' IDENTIFIED BY 'procollab_pwd';
+CREATE USER 'procollab_user'@'localhost' IDENTIFIED BY 'procollab_pwd';
 
-GRANT ALL ON `procollab`.* TO 'procollab_user';
-GRANT SELECT ON TABLE `procollab`.* TO 'procollab_user';
-GRANT SELECT, INSERT, TRIGGER ON TABLE `procollab`.* TO 'procollab_user';
-GRANT SELECT, INSERT, TRIGGER, UPDATE, DELETE ON TABLE `procollab`.* TO 'procollab_user';
-GRANT EXECUTE ON ROUTINE `procollab`.* TO 'procollab_user';
+GRANT ALL ON `procollab`.* TO 'procollab_user'@'localhost';
+GRANT EXECUTE ON mysql.* TO 'procollab_user'@'localhost';
 
 SET SQL_MODE=@OLD_SQL_MODE;
 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
