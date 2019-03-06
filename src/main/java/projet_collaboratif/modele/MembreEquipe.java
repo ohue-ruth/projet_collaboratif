@@ -13,11 +13,13 @@ import javax.persistence.Index;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.MapsId;
+import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 import javax.persistence.Version;
 
 @Entity
 @Table(name="membre_equipe", indexes={@Index(name="membreEquipeUniqueProjetPersonne", columnList="id_projet,id_personne", unique=true)})
+
 public class MembreEquipe implements Serializable {
     @EmbeddedId
     private MembreEquipeCle cle;
