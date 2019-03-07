@@ -31,28 +31,11 @@ public class TestControleur {
 		Personne personne = new Personne();
 		personne.setIdPersonne(1);
 		ArrayList<Projet> projs = projetService.findProjetsByIdPromotionNative(1);
-		ArrayList<Personne> formateursProjet = new ArrayList<Personne>();
-		for (Projet projet : projs) {
-			//projet.getTitre();
-			formateursProjet.add(personneService.findByIdPersonne(projet.getPersonne().getIdPersonne()));
-		}
-		System.out.println(formateursProjet);
-		
-		
-//		formateursProjet.add(new Personne());
-//		formateursProjet.add(new Personne());
-//		formateursProjet.add(new Personne());
-		
-		
-		//System.out.println(projs);
-		//System.out.println(formateursProjet.toString());
 		
 		ModelAndView modelAndView = new ModelAndView();
 		modelAndView.setViewName("test");
 		
-		//modelAndView.addObject("des", formateursProjet.get(0));
-		modelAndView.addObject("projs", formateursProjet);
-		//modelAndView.addObject("personne", personne);
+		modelAndView.addObject("projs", projs);
 		
 //		String[] continents = {
 //		          "Africa", "Antarctica", "Asia", "Australia", 
