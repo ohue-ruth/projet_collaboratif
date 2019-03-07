@@ -18,5 +18,10 @@ public class PersonneServiceImpl implements PersonneService {
 
 		return personneDao.findByEmailAndMotPasse(email, motPasse);
 	}
+	
+	@Override
+	public Personne  findByIdPersonne(Integer idPersonne) {
+		return personneDao.findByIdPersonne(idPersonne);
+	}
 
 }

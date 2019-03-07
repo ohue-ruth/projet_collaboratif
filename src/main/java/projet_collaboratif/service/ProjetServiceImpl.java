@@ -1,5 +1,6 @@
 package projet_collaboratif.service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,8 +20,8 @@ public class ProjetServiceImpl implements ProjetService {
 	private ProjetDao projetDao;
 
 	@Override
-	public List<Projet> findByIdProjet(Integer idProjet){
+	public ArrayList<Projet> findProjetsByIdPromotionNative(Integer idPromotion){
 
-		return projetDao.findByIdProjet(idProjet);
+		return projetDao.findProjetsByIdPromotionNative(idPromotion);
 	}
 }

@@ -1,0 +1,8 @@
+@startuml
+participant Navigateur
+participant Vue
+
+Navigateur -> Controleur : GET monEspaceEtudiant
+Controleur -> Dao: ...
+Controleur -> Vue: etudiant.html
+@enduml

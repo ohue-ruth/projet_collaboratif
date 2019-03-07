@@ -9,7 +9,7 @@ import projet_collaboratif.modele.Personne;
 public interface PersonneDao extends CrudRepository<Personne, Integer> {
 	// List<Personne> findByLastName(String lastName);
 	public Personne  findByEmailAndMotPasse(String email, String motPasse); 
-	
+	public Personne  findByIdPersonne(Integer idPersonne);
 
 	// List<Personne> findByFirstName(String surname);
 	// @Transactional

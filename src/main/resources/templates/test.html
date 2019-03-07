@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<!-- 	<tr> -->
+<!-- 	<td><h4>Projet :</h4></td> -->
+<!-- 	<td><h4 th:text="${invite.nom}"></h4></td> -->
+<!-- 	</tr> -->
+<!-- 	<tr> -->
+<!-- 	<td><h4>Formateur :</h4></td> -->
+<!-- 	<td><h4 th:text="${invite.prenom}"></h4></td> -->
+<!-- 	</tr> -->
+<!-- 	<tr> -->
+<!-- 	<td><h4>Email :</h4></td> -->
+<!-- 	<td><h4 th:text="${invite.email}"></h4></td> -->
+<!-- 	</tr> -->
+
+
+<!--     <div th:each="proj : ${projs}"> -->
+<!--     	<p>test</p> -->
+<!-- 		<p th:text="${proj.idPersonne}">test</p> --> 
+<!-- 		<p th:text="${proj.prenom}"></p> -->
+<!-- 	</div>   -->
+
+<!-- <p th:text="${des.nom}"></p> -->
+
+<table>
+      <tr>
+        <th>nom</th>
+        <th>prenom</th>
+      </tr>
+      <tr th:each="proj : ${projs}">
+        <td th:text="${proj.nom}">Onions</td>
+        <td th:text="${proj.prenom}">2.41</td> 
+      </tr>
+</table>
+
+<!-- <ul th:each="continent : ${continents}"> -->
+<!-- <li th:text="${continent}"></li> -->
+<!-- </ul> -->
+
+<!--  <h4 th:each="continent : ${continents}" th:text="${continent}"></h4> -->
+ 
+</body>
+</html>
