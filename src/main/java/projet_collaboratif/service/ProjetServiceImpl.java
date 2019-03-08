@@ -12,6 +12,7 @@ import projet_collaboratif.dao.PersonneDao;
 import projet_collaboratif.dao.ProjetDao;
 import projet_collaboratif.modele.Personne;
 import projet_collaboratif.modele.Projet;
+import projet_collaboratif.modele.ProjetMembreDto;
 
 @Service("projetService")
 @Transactional
@@ -23,5 +24,10 @@ public class ProjetServiceImpl implements ProjetService {
 	public ArrayList<Projet> findProjetsByIdPromotionNative(Integer idPromotion){
 
 		return projetDao.findProjetsByIdPromotionNative(idPromotion);
+	}
+	
+	@Override
+	public ArrayList<ProjetMembreDto> findByIdPersonneNative(Integer idPersonne){
+		return projetDao.findByIdPersonneNative(idPersonne);
 	}
 }
