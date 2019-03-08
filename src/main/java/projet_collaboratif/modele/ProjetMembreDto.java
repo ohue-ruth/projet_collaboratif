@@ -11,7 +11,6 @@ import java.util.ArrayList;
  */
 public class ProjetMembreDto {
 
-	private Integer idProjetMembreDto;
 	private Projet projet;
 	private int nbEquipes;
 	private int idMembre;
@@ -19,9 +18,8 @@ public class ProjetMembreDto {
 	/** Null si dans aucune equipe */
 	private Equipe equipeDuMembre;
 
-	public ProjetMembreDto(Integer idProjetMembreDto, Projet projet, int nbEquipes, int idMembre,
+	public ProjetMembreDto(Projet projet, int nbEquipes, int idMembre,
 			Equipe equipeDuMembre) {
-		this.idProjetMembreDto = idProjetMembreDto;
 		this.projet = projet;
 		this.nbEquipes = nbEquipes;
 		this.idMembre = idMembre;
