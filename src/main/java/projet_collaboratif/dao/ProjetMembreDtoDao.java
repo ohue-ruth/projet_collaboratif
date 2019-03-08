@@ -18,8 +18,11 @@ import projet_collaboratif.modele.ProjetMembreDto;
 	//SELECT * from membre_promotion where id_personne = 8
 	//Select id_projet from projet where id_promotion IN (SELECT id_promotion from membre_promotion where id_personne = 8) and date_fin > now();
 
-//	SELECT * from membre_promotion membreEq LEFT JOIN ( Select * from projet where id_promotion IN (SELECT id_promotion from membre_promotion where id_personne = 8) and date_fin > now()) projetPromotion
-//	on membreEq.id_projet = projetPromotion.id_projet
-//	where id_personne = 8 
+SELECT * from membre_equipe membreEq RIGHT JOIN ( Select * from projet where id_promotion IN (SELECT id_promotion from membre_promotion where id_personne = 8) and date_fin > now()) projetPromotion
+on membreEq.id_projet = projetPromotion.id_projet
+where id_personne = 4
 
+SELECT projetPromotion.id_projet, membreEq.id_equipe from membre_equipe membreEq RIGHT JOIN ( Select * from projet where id_promotion IN (SELECT id_promotion from membre_promotion where id_personne = 4) and date_fin > now()) projetPromotion
+on membreEq.id_projet = projetPromotion.id_projet
+group by projetPromotion.id_projet, membreEq.id_equipe
 }*/
