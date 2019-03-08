@@ -45,7 +45,8 @@ BEGIN
 			(7,2),
 			(8,1),
 			(9,1),
-			(10,1);
+			(10,1),
+            (11,2);
 
     insert into projet (id_projet, id_formateur, id_promotion, titre, date_creation, date_fin)
         values   (1, 1, 1, 'Projet_A', '2019/02/05',  '2019/06/12'),
