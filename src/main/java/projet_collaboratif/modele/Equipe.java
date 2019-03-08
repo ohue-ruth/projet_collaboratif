@@ -4,6 +4,7 @@ package projet_collaboratif.modele;
 
 import java.io.Serializable;
 import java.sql.Timestamp;
+import java.util.Date;
 import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.Set;
@@ -22,34 +23,36 @@ public class Equipe implements Serializable {
     /** Primary key. */
     protected static final String PK = "idEquipe";
 
+    
     /**
      * The optimistic lock. Available via standard bean get/set operations.
      */
-    @Version
-    @Column(name="LOCK_FLAG")
-    private Integer lockFlag;
+    //@Version
+   // @Column(name="LOCK_FLAG")
+   // private Integer lockFlag;
 
     /**
      * Access method for the lockFlag property.
      *
      * @return the current value of the lockFlag property
      */
-    public Integer getLockFlag() {
-        return lockFlag;
-    }
+   // public Integer getLockFlag() {
+    //    return lockFlag;
+  // }
 
     /**
      * Sets the value of the lockFlag property.
      *
      * @param aLockFlag the new value of the lockFlag property
      */
-    public void setLockFlag(Integer aLockFlag) {
-        lockFlag = aLockFlag;
-    }
+   // public void setLockFlag(Integer aLockFlag) {
+   //     lockFlag = aLockFlag;
+   // }
 
     @Id
     @Column(name="id_equipe", unique=true, nullable=false, precision=10)
     private int idEquipe;
+    
     @Column(nullable=false, length=45)
     private String libelle;
     @Column(name="date_creation", nullable=false)
@@ -67,7 +70,17 @@ public class Equipe implements Serializable {
         super();
     }
 
-    /**
+    /** Cree à l'instant courant */
+    public Equipe(int idEquipe, String commentaire, Personne personne) {
+		super();
+		this.libelle="";
+		this.idEquipe = idEquipe;
+		this.commentaire = commentaire;
+		this.personne = personne;
+		this.dateCreation= new Timestamp((new Date()).getTime());
+	}
+
+	/**
      * Access method for idEquipe.
      *
      * @return the current value of idEquipe
