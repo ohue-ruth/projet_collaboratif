@@ -34,6 +34,9 @@ class EquipeControleur {
 		Equipe equipe = new Equipe(1, commentaire, user);
 //		boolean flag = equipeService.addEquipe(equipe);
 		return "redirect:equipe-" + equipe.getIdEquipe();
+		
+		
+//		boolean flag = equipeService.addEquipe(equipe);
 	}
 
 	@GetMapping("equipe-{idEquipe}")
