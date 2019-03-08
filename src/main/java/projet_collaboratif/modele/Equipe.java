@@ -27,31 +27,32 @@ public class Equipe implements Serializable {
     /**
      * The optimistic lock. Available via standard bean get/set operations.
      */
-    @Version
-    @Column(name="LOCK_FLAG")
-    private Integer lockFlag;
+    //@Version
+   // @Column(name="LOCK_FLAG")
+   // private Integer lockFlag;
 
     /**
      * Access method for the lockFlag property.
      *
      * @return the current value of the lockFlag property
      */
-    public Integer getLockFlag() {
-        return lockFlag;
-    }
+   // public Integer getLockFlag() {
+    //    return lockFlag;
+  // }
 
     /**
      * Sets the value of the lockFlag property.
      *
      * @param aLockFlag the new value of the lockFlag property
      */
-    public void setLockFlag(Integer aLockFlag) {
-        lockFlag = aLockFlag;
-    }
+   // public void setLockFlag(Integer aLockFlag) {
+   //     lockFlag = aLockFlag;
+   // }
 
     @Id
     @Column(name="id_equipe", unique=true, nullable=false, precision=10)
     private int idEquipe;
+    
     @Column(nullable=false, length=45)
     private String libelle;
     @Column(name="date_creation", nullable=false)
@@ -72,6 +73,7 @@ public class Equipe implements Serializable {
     /** Cree à l'instant courant */
     public Equipe(int idEquipe, String commentaire, Personne personne) {
 		super();
+		this.libelle="";
 		this.idEquipe = idEquipe;
 		this.commentaire = commentaire;
 		this.personne = personne;

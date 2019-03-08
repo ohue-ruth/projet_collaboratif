@@ -26,24 +26,23 @@ class EquipeControleur {
 	private EquipeServiceImp equipeService;
 
 	@GetMapping("creerEquipe-{idProjet}")
-	public String addEquipe(
-			HttpSession session,
-			@PathVariable(value="idProjet") int idProjet,
-			@RequestParam(value="commentaire", defaultValue="") String commentaire) {
+	public String ajouterEquipe(HttpSession session, @PathVariable(value = "idProjet") int idProjet,
+			@RequestParam(value = "commentaire", defaultValue = "") String commentaire) {
 		Personne user = (Personne) session.getAttribute("user");
-		Equipe equipe = new Equipe(1, commentaire, user);
-//		boolean flag = equipeService.addEquipe(equipe);
+		Equipe equipe = new Equipe(10, commentaire, user);
+		equipeService.addEquipe(equipe);
+		System.out.println(equipe);
 		return "redirect:equipe-" + equipe.getIdEquipe();
-		
-		
-//		boolean flag = equipeService.addEquipe(equipe);
+
+//		
 	}
 
 	@GetMapping("equipe-{idEquipe}")
-	public String equipeForm(@PathVariable(value="idEquipe") int idEquipe,
-			ModelMap map) {
+	public String equipeForm(@PathVariable(value = "idEquipe") int idEquipe, ModelMap map) {
 		// Recuperer l'quipe via la dao
-		Equipe equipe = new Equipe();
+
+		Equipe equipe = equipeService.findById(idEquipe).get();
+		;
 		map.put("equipe", equipe);
 		return "equipe.html";
 	}
