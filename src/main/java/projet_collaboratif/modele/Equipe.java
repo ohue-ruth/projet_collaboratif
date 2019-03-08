@@ -4,6 +4,7 @@ package projet_collaboratif.modele;
 
 import java.io.Serializable;
 import java.sql.Timestamp;
+import java.util.Date;
 import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.Set;
@@ -67,7 +68,16 @@ public class Equipe implements Serializable {
         super();
     }
 
-    /**
+    /** Cree à l'instant courant */
+    public Equipe(int idEquipe, String commentaire, Personne personne) {
+		super();
+		this.idEquipe = idEquipe;
+		this.commentaire = commentaire;
+		this.personne = personne;
+		this.dateCreation= new Timestamp((new Date()).getTime());
+	}
+
+	/**
      * Access method for idEquipe.
      *
      * @return the current value of idEquipe
