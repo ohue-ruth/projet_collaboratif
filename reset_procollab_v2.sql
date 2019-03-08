@@ -55,9 +55,11 @@ BEGIN
 
 
     insert into equipe (id_equipe, id_createur, libelle, date_creation, commentaire)
-        values   (1, 1, 'equipeCDI', '2019/03/01','Bienvenue'),
-      		     (2, 2, 'EquipeRoto', '2018/09/01','Hello'),
-				 (3, 3, 'equipeDADA', '2017/03/01','Mes salutations');
+        values   (1, 4, 'equipeCDI', '2019/03/01','Bienvenue'),
+      		     (2, 8, 'EquipeRoto', '2018/09/01','Hello'),
+				 (3, 10, 'equipeDADA', '2017/03/01','Mes salutations'),
+				 (4, 4, 'equipeTOTO', '2016/02/01',''),
+				 (5, 7, 'equipeCDI8', '2014/05/01','Bonjour');
 
     insert into membre_equipe (id_projet, id_equipe, id_personne)
         values  (1, 1, 4),
@@ -68,10 +70,10 @@ BEGIN
 				(1, 2, 9),
 				(1, 3, 10),
 				(1, 3, 11),
-				(2, 1, 4),
-				(2, 1, 5),
-				(2, 1, 6),
-				(2, 2, 7);
+				(2, 4, 4),
+				(2, 4, 5),
+				(2, 4, 6),
+				(2, 5, 7);
 
 
 	 					
