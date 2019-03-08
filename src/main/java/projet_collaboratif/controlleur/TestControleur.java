@@ -13,6 +13,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import projet_collaboratif.modele.Personne;
 import projet_collaboratif.modele.Projet;
+import projet_collaboratif.modele.ProjetMembreDto;
 import projet_collaboratif.service.PersonneService;
 import projet_collaboratif.service.ProjetService;
 
@@ -31,6 +32,8 @@ public class TestControleur {
 		Personne personne = new Personne();
 		personne.setIdPersonne(1);
 		ArrayList<Projet> projs = projetService.findProjetsByIdPromotionNative(1);
+		
+		ArrayList<ProjetMembreDto> projs2 = projetService.findByIdPersonneNative(4);
 		
 		ModelAndView modelAndView = new ModelAndView();
 		modelAndView.setViewName("test");
